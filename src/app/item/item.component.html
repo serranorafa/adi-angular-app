@@ -1,2 +1,2 @@
-<label class="float-left" style="cursor: pointer;"><h4>{{ nombre }}</h4></label>
+<h4 class="float-left" [ngClass]="{'tachado' : comprado}" style="cursor: pointer;">{{ nombre }}</h4>
 <button class="btn btn-danger float-right" (click)='borrarItem()'>X</button>

@@ -24,20 +24,25 @@ export class ListaItemsComponent implements OnInit {
     let producto = (<HTMLInputElement>document.getElementById('producto')).value;
     
     this.rest.getProducts().subscribe((resp: any) => {
-      console.log(resp.results)
+      //console.log(resp.results)
     })
 
     if (producto) {
       this.idActual++;
-      const item = { id: this.idActual, nombre: producto }
+      const item = { id: this.idActual, nombre: producto, comprado: false }
       items.push(item);
       (<HTMLInputElement>document.getElementById('producto')).value = '';
     }
   }
 
   borrarItem(item) {
-    console.log('padre')
     var index = items.findIndex(itemBorrar => itemBorrar.id == item.id);
     items.splice(index, 1);
+  }
+
+  tacharItem(item) {
+    console.log('tacharItem lista')
+    var index = items.findIndex(itemBorrar => itemBorrar.id == item.id);
+    items[index].comprado = !item.comprado;
   }
 }

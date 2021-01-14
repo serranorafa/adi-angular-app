@@ -3,12 +3,15 @@
 <div class="row">
     <ul class="list-group w-100">
         <app-item
-            class="list-group-item"
+            class="list-group-item "
             style="cursor: pointer;"
             *ngFor="let item of items" 
-            (childEvent)="borrarItem($event)" 
+            (childEvent)="borrarItem($event)"
+            (childEventTachar)="tacharItem($event)"
             [id]='item.id' 
-            [nombre]='item.nombre'>
+            [nombre]='item.nombre'
+            [comprado]='item.comprado'
+            (click)="tacharItem(item)">
         </app-item>
     </ul>
 </div>

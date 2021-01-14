@@ -10,7 +10,9 @@ import { EventEmitter } from '@angular/core';
 export class ItemComponent implements OnInit {
   @Input() id: number;
   @Input() nombre: string;
+  @Input() comprado: boolean;
   @Output() childEvent = new EventEmitter();
+  @Output() childEventTachar = new EventEmitter();
 
   constructor() { }
 
@@ -20,5 +22,4 @@ export class ItemComponent implements OnInit {
   borrarItem() {
     this.childEvent.emit(this)
   }
-  
 }
