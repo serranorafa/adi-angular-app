@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { RestService } from '../rest.service';
+import { ConsultaApiService } from '../consulta-api.service';
 
 @Component({
   selector: 'app-peticion-api',
@@ -10,7 +9,7 @@ import { RestService } from '../rest.service';
 export class PeticionApiComponent implements OnInit {
 
   constructor(
-    public rest: RestService
+    public api: ConsultaApiService
   ) { }
 
   ngOnInit(): void {
@@ -18,14 +17,12 @@ export class PeticionApiComponent implements OnInit {
 
   buscarPersonaje() {
     let personaje = (<HTMLInputElement>document.getElementById('personaje')).value;
-    var nombre: string;
 
     if (!personaje) {
       (<HTMLInputElement>document.getElementById('error')).setAttribute('style', 'visibility: visible');
     } else {
-      this.rest.buscarPersonaje(personaje).subscribe((resp: any) => {
+      this.api.buscarPersonaje(personaje).subscribe((resp: any) => {
         if (resp.results.length != 0) {
-          console.log(resp.results[0]);
           (<HTMLInputElement>document.getElementById('nombre')).innerHTML = resp.results[0].name;
           (<HTMLInputElement>document.getElementById('altura')).innerHTML = resp.results[0].height;
           (<HTMLInputElement>document.getElementById('peso')).innerHTML = resp.results[0].mass;
@@ -38,8 +35,6 @@ export class PeticionApiComponent implements OnInit {
         }
       });
     }
-
     (<HTMLInputElement>document.getElementById('personaje')).value = '';
   }
-
 }
