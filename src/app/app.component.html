@@ -1,9 +1,8 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="navbar-collapse collapse" id="navbarColor01" style="">
+  <div class="navbar-collapse collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/']">Inicio <span class="sr-only">(current)</span></a>
@@ -12,11 +11,10 @@
         <a class="nav-link" [routerLink]="['/listacompra']">Lista de la compra</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/peticionapi']">Consulta API</a>
+        <a class="nav-link" [routerLink]="['/consultaapi']">Consultar API</a>
       </li>
     </ul>
   </div>
-
 </nav>
 <div role="main" class="container">
   <div class="full-width">

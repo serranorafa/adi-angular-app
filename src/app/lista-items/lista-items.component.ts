@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { items } from '../items';
-import { RestService } from '../rest.service';
 
 @Component({
   selector: 'app-lista-items',
@@ -11,13 +10,11 @@ export class ListaItemsComponent implements OnInit {
   items = [];
   idActual: number;
 
-  constructor(
-    public rest: RestService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.items = items;
-    this.idActual = items[items.length - 1].id;
+    this.idActual = items[this.items.length - 1].id;
   }
 
   anyadirItem(): void {
@@ -37,8 +34,8 @@ export class ListaItemsComponent implements OnInit {
   }
 
   tacharItem(item) {
-    console.log('tacharItem lista')
-    var index = items.findIndex(itemBorrar => itemBorrar.id == item.id);
+    var index = items.findIndex(itemTachar => itemTachar.id == item.id);
     items[index].comprado = !item.comprado;
   }
+
 }
