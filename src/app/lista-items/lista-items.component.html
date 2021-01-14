@@ -1,0 +1,13 @@
+<h1>Lista de la compra</h1>
+
+<div class="row">
+    <div class="col-xs-10">
+        <ul class="list-group">
+            <app-item class="list-group-item" *ngFor="let item of items" (childEvent)="borrarItem($event)" [id]='item.id' [nombre]='item.nombre'></app-item>
+        </ul>
+    </div>
+</div>
+<div id="formulario">
+    <input type="text" id="producto">
+    <button id="boton" (click)='anyadirItem()'>Añadir</button>
+</div>
