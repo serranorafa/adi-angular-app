@@ -7,17 +7,18 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RestService {
+  endpoint = 'https://swapi.dev/api/';
 
   constructor(private http: HttpClient) { }
 
-  private extractData(res: Response): any {
+  private extraerDatos(res: Response): any {
     const body = res;
     return body || { };
   }
 
-  getProducts(): Observable<any> {
-    return this.http.get('https://swapi.dev/api/planets/').pipe(
-      map(this.extractData)
+  buscarPersonaje(personaje: string): Observable<any> {
+    return this.http.get(this.endpoint + 'people/?search=' + personaje).pipe(
+      map(this.extraerDatos)
     );
   }
 }

@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { ItemComponent } from './item/item.component';
 import { ListaItemsComponent } from './lista-items/lista-items.component';
+import { PeticionApiComponent } from './peticion-api/peticion-api.component';
 
 const routes: Routes = [
-  { path: '', component: ListaItemsComponent },
+  { path: '', component: HomeComponent },
+  { path: 'listacompra', component: ListaItemsComponent},
+  { path: 'peticionapi', component: PeticionApiComponent }
 ];
 
 @NgModule({

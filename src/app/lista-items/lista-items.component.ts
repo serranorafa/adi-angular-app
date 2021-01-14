@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ResolveEnd } from '@angular/router';
 import { items } from '../items';
 import { RestService } from '../rest.service';
 
@@ -10,22 +8,20 @@ import { RestService } from '../rest.service';
   styleUrls: ['./lista-items.component.css']
 })
 export class ListaItemsComponent implements OnInit {
-  items = items;
-  idActual = items[items.length - 1].id;
+  items = [];
+  idActual: number;
 
   constructor(
     public rest: RestService
   ) { }
 
   ngOnInit(): void {
+    this.items = items;
+    this.idActual = items[items.length - 1].id;
   }
 
   anyadirItem(): void {
     let producto = (<HTMLInputElement>document.getElementById('producto')).value;
-    
-    this.rest.getProducts().subscribe((resp: any) => {
-      //console.log(resp.results)
-    })
 
     if (producto) {
       this.idActual++;
