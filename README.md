@@ -1,5 +1,7 @@
 # AdiApp
 
+[Vídeo](https://youtu.be/yYcF6SfeIxk)
+
 ## Instalación y ejecución
 
 Para poder instalar la aplicación habrá que tener, en primer lugar, Node.js instalado. Para comprobar si lo tenemos instalado y su versión habrá que ejecutar:
