@@ -1,27 +1,27 @@
 # AdiApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
+## Instalación y ejecución
 
-## Development server
+Para poder instalar la aplicación habrá que tener, en primer lugar, Node.js instalado. Para comprobar si lo tenemos instalado y su versión habrá que ejecutar:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+` $ node -v `
 
-## Code scaffolding
+En el caso de no tenerlo instalado:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+` $ sudo apt install nodejs `
 
-## Build
+Lo mismo pasará con el gestor de paquetes de Node, y para comprobar su versión e instalar habrá que ejecutar respectivamente:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+` $ npm -v `
 
-## Running unit tests
+` $ sudo apt install npm `
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Finalmente, será necesario tener instalada la interfaz de línea de comandos Angular CLI:
 
-## Running end-to-end tests
+` $ sudo npm install -g @angular/cli `
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Una vez comprobado todo esto, podremos instalar las dependencias y ejecutar el servidor con los siguientes comandos respectivamente:
 
-## Further help
+` $ sudo npm install `
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+` $ ng serve --open `
